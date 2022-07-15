@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+    
+}
+
+:root {
+
+    /* Primary Colors */
+    --LightCyan: hsl(193, 38%, 86%);
+    --NeonGreen: hsl(150, 100%, 66%);
+
+    /* Neutral Colors */
+    --GrayishBlue: hsl(217, 19%, 38%);
+    --DarkGrayishBlue: hsl(217, 19%, 24%);
+    --DarkBlue: hsl(218, 23%, 16%);
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 800;
+    background-color: var(--DarkBlue);
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    width: 25rem;
+    background-color: var(--DarkGrayishBlue);
+    border-radius: 12px;
+    padding: 2rem;
+    position: relative;
+}
+
+h1 {
+    font-size: 1rem;
+    color: var(--NeonGreen);
+    text-transform: uppercase;
+}
+
+p {
+    font-size: 1.5rem;
+    color: var(--LightCyan);
+    text-align: center;
+}
+
+.divider img {
+    width: 100%;
+}
+
+.dice {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    background-color: var(--NeonGreen);
+    border-radius: 50%;
+    position: relative;
+    top: 3.75rem;
+    margin-top: -3.75rem;
+}
+
+.dice:hover {
+    box-shadow: 0 0 20px var(--NeonGreen);
+}

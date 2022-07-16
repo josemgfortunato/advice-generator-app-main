@@ -1,25 +1,19 @@
-const submitEl = document.querySelector('#submit')
-const paragraphEl = document.querySelector('#advice')
-const adviceIdEl = document.querySelector('#advice-id')
+const diceEl = document.querySelector(`#dice`)
+const paragraphEl = document.querySelector(`#advice`)
+const adviceIdEl = document.querySelector(`#advice-id`)
+const APIURL = `https://api.adviceslip.com/advice`
 
-submitEl.addEventListener('click', rollTheDice);
+getAdvice()
 
-const APIURL = "https://api.adviceslip.com/advice"
-
-getAdvice(APIURL)
-
-async function getAdvice(apiurl) {
-    const resp = await fetch(apiurl)
+async function getAdvice() {
+    const resp = await fetch(APIURL)
     const respData = await resp.json()
-    rollTheDice(respData.slip)
+    adviceIdEl.innerText = `advice # ${respData.slip.id}`
+    paragraphEl.innerText = `"${respData.slip.advice}"`
 }
 
-function rollTheDice(data) {
-    // adviceIdEl.innerHTML = ""
-    // paragraphEl.innerHTML = ""
-    adviceIdEl.innerHTML = `advice # ${data.id}`
-    paragraphEl.innerHTML = `${data.advice}`
-}
+diceEl.addEventListener(`click`, getAdvice)
+
 
 
 
